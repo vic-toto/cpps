@@ -1,7 +1,10 @@
-NAME	=	megaphone
+NAME	=	Zombie
 CPPC	=	clang++
 FLAGS	=	-Wall -Wextra -Werror
-SRCS	=	megaphone.cpp 
+SRCS	=	Zombie.cpp \
+			newZombie.cpp \
+			main.cpp \
+			randomChump.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 
 %.o			:	%.cpp
