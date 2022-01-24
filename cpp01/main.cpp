@@ -2,9 +2,10 @@
 
 int	main(void)
 {
-	Zombie zombie; 
+	Zombie *a = NULL;
+	a = newZombie("paolo"); 
 
 	randomChump("Buggalo");
-	zombie.~Zombie();
+	delete(a);
 	return (0);
 }
