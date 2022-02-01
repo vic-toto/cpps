@@ -8,16 +8,21 @@ class ClapTrap
 {
     private:
         std::string _name;
-        unsigned int hitPoints = 10;
-        unsigned int energyPoints = 10;
-		unsigned int attackDamage = 0;
+        unsigned int _hitPoints;
+        unsigned int _energyPoints;
+		unsigned int _attackDamage;
     public:
         ClapTrap();
         ~ClapTrap();
 		ClapTrap(std::string name);
+        ClapTrap(ClapTrap &trap);
+        //getName();
+        //getPoints();
+        //getEnergyPoints();
 		void attack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+        ClapTrap &operator = (ClapTrap & equal);
 };
 
 #endif
