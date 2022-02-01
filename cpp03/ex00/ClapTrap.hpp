@@ -16,9 +16,6 @@ class ClapTrap
         ~ClapTrap();
 		ClapTrap(std::string name);
         ClapTrap(ClapTrap &trap);
-        //getName();
-        //getPoints();
-        //getEnergyPoints();
 		void attack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);

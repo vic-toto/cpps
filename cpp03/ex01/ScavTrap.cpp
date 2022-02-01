@@ -17,7 +17,7 @@ ScavTrap::ScavTrap(ScavTrap &trap)
 
 ScavTrap::ScavTrap(std::string name)
 {
-    std::cout << "Copy constructor called for " << name;
+    std::cout << "ScavTrap --- Copy constructor called for " << name;
     this->_name = name;
     this->_hitPoints = 100;
     this->_energyPoints = 50;

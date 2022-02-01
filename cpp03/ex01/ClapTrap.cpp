@@ -2,12 +2,12 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "ClapTrap --- Default constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Default destructor called - warrior has retired" << std::endl;
+    std::cout << "ClapTrap --- Default destructor called - warrior has retired" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap &trap)
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(ClapTrap &trap)
 
 ClapTrap::ClapTrap(std::string name)
 {
-    std::cout << "Copy constructor called for " << name;
+    std::cout << "ClapTrap --- Copy constructor called for " << name;
     this->_name = name;
     this->_hitPoints = 10;
     this->_energyPoints = 10;
