@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
     std::cout << "Default constructor called" << std::endl;
 }
@@ -15,7 +15,7 @@ ScavTrap::ScavTrap(ScavTrap &trap)
     *this = trap;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
     std::cout << "ScavTrap --- Copy constructor called for " << name;
     this->_name = name;
@@ -25,9 +25,10 @@ ScavTrap::ScavTrap(std::string name)
     std::cout << " ENERGY : " << _energyPoints << " HIT POINTS : " << _hitPoints << " DAMAGE : " << _attackDamage << std::endl;
 }
 
-void    ScavTrap::attack(std::string const & target)
+void    ScavTrap::attack(std::string target)
 {
-    std::cout << "ScavpTrap " << this->_name << " attacks "  << target << " causing " << _attackDamage << " points of damage!";
+    takeDamage(5);
+    std::cout << "ScavpTrap " << this->_name << " attacks "  << target << " causing " << this->_attackDamage << " points of damage!";
     std::cout << " ENERGY : " << _energyPoints << " HIT POINTS : " << _hitPoints << " DAMAGE : " << _attackDamage << std::endl;
 }
 
