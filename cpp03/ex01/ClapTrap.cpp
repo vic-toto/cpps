@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "ClapTrap --- Default constructor called" << std::endl;
+    std::cout << "ClapTrap --- Default constructor calledfor " << _name << std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -15,19 +15,22 @@ ClapTrap::ClapTrap(ClapTrap &trap)
     *this = trap;
 }
 
+void    ClapTrap::displayStatus()
+{
+    std::cout << _name << " ENERGY : " << _energyPoints << " HIT POINTS : " << _hitPoints << " DAMAGE : " << _attackDamage << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
-    std::cout << "ClapTrap --- Copy constructor called for " << name;
+    std::cout << "ClapTrap --- Copy constructor called for " << name << std::endl;
     this->_name = name;
     this->_hitPoints = 10;
     this->_energyPoints = 10;
-    this->_attackDamage = 0;
-    std::cout << " ENERGY : " << _energyPoints << " HIT POINTS : " << _hitPoints << " DAMAGE : " << _attackDamage << std::endl;
+    this->_attackDamage = 5;
 }
 
 void    ClapTrap::takeDamage(unsigned int amount)
 {
-   // std::cout << "Damage inflicted : " << amount << std::endl;
     this->_attackDamage += amount;
     this->_energyPoints -= amount;
 }
@@ -41,9 +44,7 @@ void    ClapTrap::beRepaired(unsigned int amount)
 
 void    ClapTrap::attack(std::string const & target)
 {
-    takeDamage(5);
     std::cout << "ClapTrap " << this->_name << " attacks "  << target << " causing " << _attackDamage << " points of damage!";
-    std::cout << " ENERGY : " << _energyPoints << " HIT POINTS : " << _hitPoints << " DAMAGE : " << _attackDamage << std::endl;
 }
 
 ClapTrap  &  ClapTrap::operator = (ClapTrap &equals)

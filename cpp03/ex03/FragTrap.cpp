@@ -17,19 +17,16 @@ FragTrap::FragTrap(FragTrap &trap)
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-    std::cout << "FragTrap --- Copy constructor called for " << name;
+    std::cout << "FragTrap --- Copy constructor called for " << name << std::endl;
     this->_name = name;
     this->_hitPoints = 100;
     this->_energyPoints = 50;
     this->_attackDamage = 20;
-    std::cout << " ENERGY : " << _energyPoints << " HIT POINTS : " << _hitPoints << " DAMAGE : " << _attackDamage << std::endl;
 }
 
 void    FragTrap::attack(std::string target)
 {
-    takeDamage(5);
-    std::cout << "FragTrap " << this->_name << " attacks "  << target << " causing " << this->_attackDamage << " points of damage!";
-    std::cout << " ENERGY : " << _energyPoints << " HIT POINTS : " << _hitPoints << " DAMAGE : " << _attackDamage << std::endl;
+    std::cout << "FragTrap " << this->_name << " attacks "  << target << " causing " << this->_attackDamage << " points of damage!" << std::endl;
 }
 
 std::string    FragTrap::getName()

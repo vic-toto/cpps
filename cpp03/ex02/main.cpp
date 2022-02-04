@@ -7,10 +7,16 @@ int     main(void)
     FragTrap one("Bouncie");
     ScavTrap a("Blondie");
 
-    one.attack("Mattep");
-    a.attack("Mike");
+    one.displayStatus();
+    a.displayStatus();
+    one.attack("Blondie");
+    a.takeDamage(20);
+    a.attack("Bouncie");
+    one.takeDamage(20);
     a.guardGate();
     one.highFiveGuys();
+    one.displayStatus();
+    a.displayStatus();
     std::cout << "IT IS OVER FOR NOW" << std::endl;
     return (0);
 }

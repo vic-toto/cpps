@@ -2,7 +2,7 @@
 
 DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap()
 {
-    std::cout << "Default Frag constructor called" << std::endl;
+    std::cout << "Default Diamond constructor called" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()
@@ -17,12 +17,11 @@ DiamondTrap::DiamondTrap(DiamondTrap &trap)
 
 DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
 {
-    std::cout << "FragTrap --- Copy constructor called for " << name;
+    std::cout << "DiamondTrap --- Copy constructor called for " << name << std::endl;
     this->_name = name;
     this->_hitPoints = 100;
     this->_energyPoints = 50;
     this->_attackDamage = 20;
-    std::cout << " ENERGY : " << _energyPoints << " HIT POINTS : " << _hitPoints << " DAMAGE : " << _attackDamage << std::endl;
 }
 
 void   DiamondTrap::takeDamage(unsigned int amount)
@@ -33,9 +32,7 @@ void   DiamondTrap::takeDamage(unsigned int amount)
 
 void    DiamondTrap::attack(std::string target)
 {
-    takeDamage(5);
-    std::cout << "DiamondTrap " << this->_name << " attacks "  << target << " causing " << this->_attackDamage << " points of damage!";
-    std::cout << " ENERGY : " << _energyPoints << " HIT POINTS : " << _hitPoints << " DAMAGE : " << _attackDamage << std::endl;
+    std::cout << "DiamondTrap " << this->_name << " attacks "  << target << " causing " << this->_attackDamage << " points of damage!" << std::endl;
 }
 
 std::string    DiamondTrap::getName()
