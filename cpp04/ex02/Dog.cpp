@@ -36,5 +36,5 @@ Dog & Dog::operator = (Dog & uguale)
 
 void Dog::makeSound() const
 {
-	std::cout << "WOOF" << std::endl;
+	std::cout << "WOOOF" << std::endl;
 }

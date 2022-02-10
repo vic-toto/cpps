@@ -2,20 +2,20 @@
 #include "Brain.hpp"
 
 
-Dog::Dog()
+Cat::Cat()
 {
-    this->_type = "Default Dog";
+    this->_type = "Default cat";
     this->brain = new Brain();
     std::cout << this->_type << " constructor called" << std::endl;
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
     delete brain;
-    std::cout << "Dog: default destructor called" << std::endl;
+    std::cout << "Cat: default destructor called" << std::endl;
 }
 
-Dog::Dog(Dog &copy)
+Cat::Cat(Cat &copy)
 {
     delete this->brain;
     brain = new Brain(*copy.brain);
@@ -23,18 +23,18 @@ Dog::Dog(Dog &copy)
     *this = copy;
 }
 
-Dog & Dog::operator = (Dog & uguale)
+Cat & Cat::operator = (Cat & uguale)
 {
     if (this != &uguale)
     {
         delete brain; 
         this->_type = uguale._type;
-        *brain = *uguale.brain;
+        brain = new Brain(*uguale.brain);
     }
     return (*this);
 }
 
-void Dog::makeSound() const
+void Cat::makeSound() const
 {
-	std::cout << "WOOF" << std::endl;
+	std::cout << "MEOW" << std::endl;
 }
