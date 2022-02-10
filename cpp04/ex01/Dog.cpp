@@ -29,7 +29,7 @@ Dog & Dog::operator = (Dog & uguale)
     {
         delete brain; 
         this->_type = uguale._type;
-        *brain = *uguale.brain;
+        brain = new Brain(*uguale.brain);
     }
     return (*this);
 }
