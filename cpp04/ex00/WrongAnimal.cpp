@@ -32,3 +32,41 @@ WrongAnimal & WrongAnimal::operator = (WrongAnimal & uguale)
     this->_type = uguale._type;
     return (*this);
 }
+
+void WrongAnimal::makeSound() const
+{
+	std::cout << "*wierd noise*" << std::endl;
+}
+
+WrongCat::WrongCat()
+{
+    this->_type = "Default WrongCat";
+    std::cout << this->_type << " constructor called" << std::endl;
+}
+
+WrongCat::WrongCat(std::string name)
+{
+    this->_type = name;
+    std::cout << "WrongCat: " << this->_type << " constructor called" << std::endl;
+}
+
+WrongCat::~WrongCat()
+{
+    std::cout << "WrongCat: Default destructor called" << std::endl;
+}
+
+WrongCat::WrongCat(WrongCat & copy)
+{
+    *this = copy;
+}
+
+std::string WrongCat::getType() const
+{
+    return (this->_type);
+}
+
+WrongCat & WrongCat::operator = (WrongCat & uguale)
+{
+    this->_type = uguale._type;
+    return (*this);
+}

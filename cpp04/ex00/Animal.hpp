@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include "WrongAnimal.hpp"
 
 class      Animal
 {
@@ -12,7 +13,7 @@ class      Animal
         Animal();
         Animal(std::string name);
         Animal(Animal &copy);
-        ~Animal();
+        virtual ~Animal();
 		Animal & operator = (Animal & uguale);
 		virtual void makeSound() const;
 		std::string getType() const;
@@ -34,7 +35,7 @@ class Dog : public Animal
     public:
         Dog();
         Dog(std::string name);
-        Dog(Cat &copy);
+        Dog(Dog &copy);
         ~Dog();
 		Dog & operator = (Dog & uguale);
 		virtual void makeSound() const;

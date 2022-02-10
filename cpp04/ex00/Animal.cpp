@@ -12,7 +12,7 @@ Animal::Animal(std::string name)
     std::cout << "Animal: copy constructor called for " << this->_type << std::endl;
 }
 
- Animal::~Animal()
+Animal::~Animal()
 {
     std::cout << "Animal: default destructor called" << std::endl;
 }
@@ -35,7 +35,6 @@ Animal & Animal::operator = (Animal & uguale)
 
 void Animal::makeSound() const
 {
-	std::cout << getType() << " : *growling noise*" << std::endl;
 }
 
 
