@@ -4,9 +4,6 @@
 #include <sstream>
 #include <string>
 
-#include "Animal.hpp"
-#include "WrongAnimal.hpp"
-
 class Brain
 {
     private:

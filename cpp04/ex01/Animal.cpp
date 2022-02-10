@@ -1,4 +1,6 @@
 #include "Animal.hpp"
+#include "Brain.hpp"
+
 
 Animal::Animal()
 {

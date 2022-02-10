@@ -1,9 +1,10 @@
+#pragma once
+
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 
 #include <string>
 #include <iostream>
-#include "WrongAnimal.hpp"
 #include "Brain.hpp"
 
 class      Animal
@@ -23,10 +24,9 @@ class      Animal
 class Cat : public Animal
 {
     private:
-        Brain *brain;
+        Brain*  brain;
     public:
         Cat();
-        Cat(std::string name);
         Cat(Cat &copy);
         ~Cat();
 		Cat & operator = (Cat & uguale);
@@ -36,10 +36,9 @@ class Cat : public Animal
 class Dog : public Animal
 {
     private:
-        Brain *brain;
+        Brain*  brain;
     public:
         Dog();
-        Dog(std::string name);
         Dog(Dog &copy);
         ~Dog();
 		Dog & operator = (Dog & uguale);
