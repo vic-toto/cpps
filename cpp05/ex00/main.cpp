@@ -2,7 +2,6 @@
 
 int main()
 {
-    
     try
     {
         Bureaucrat a("Vic", 2);
@@ -10,7 +9,7 @@ int main()
       
         std::cout << a << std::endl;
         std::cout << b << std::endl;
-        std::cout << "\nDoing increments and decrements...\n" << std::endl;
+        std::cout << "\nDoing increments and decrements..." << std::endl;
     
         a.decrement(1);
         b.increment(1);

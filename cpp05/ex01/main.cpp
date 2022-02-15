@@ -1,28 +1,30 @@
 #include "Bureaucrat.hpp"
+//#include "Form.hpp"
 
 int main()
 {
-    
     try
     {
-        Bureaucrat a("Vic", 2);
-        Bureaucrat b("Toria", 148);
-      
+        Bureaucrat a("Victoria", 1);
+        Bureaucrat b("Moya", 149);
+        Bureaucrat c("Anna", 150);
+        Form x("Report", 150, 150);
+        Form y("Promotion", 1, 1);
+        Form z("Firing", 149, 149);
+    
         std::cout << a << std::endl;
         std::cout << b << std::endl;
-        std::cout << "\nDoing increments and decrements...\n" << std::endl;
-    
-        a.decrement(1);
-        b.increment(1);
-       
-        std::cout << a.getGrade() << std::endl;
-        std::cout << b.getGrade() << std::endl;
-
-        a.decrement(1);
-        b.increment(1);
-
-        std::cout << "Name: " << a.getName() << " has grade " << a.getGrade() << std::endl;
-        std::cout << "Name: " << b.getName() << " has grade " << b.getGrade() << std::endl;
+        std::cout << c << std::endl;
+        std::cout << x << std::endl;
+        std::cout << y << std::endl;
+        std::cout << z << std::endl;
+        a.signForm(y);
+        b.signForm(y);
+        b.signForm(z);
+        c.signForm(x);
+        std::cout << x << std::endl;
+        std::cout << y << std::endl;
+        std::cout << z << std::endl;
     }
     catch(const std::exception& e)
     {
