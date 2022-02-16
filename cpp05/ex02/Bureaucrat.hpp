@@ -21,10 +21,11 @@ class Bureaucrat
 			void	setName(const std::string name);
 			void	setGrade(int grade);
 			std::string const getName();
-			int				getGrade();
+			int	getGrade() const;
 			void increment(int num);
 			void decrement(int num);
 			void signForm(Form &Form);
+			void execForm(const Form &form);
 			class GradeTooHighException : public std::exception{
 				public:
 					virtual const char* what() const throw();

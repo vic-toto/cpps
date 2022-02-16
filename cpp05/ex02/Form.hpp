@@ -17,23 +17,29 @@ class Form
         int  gradeToExec;
 
     public:
-        //Form();
+        Form();
 		Form(Form & copy);
         Form(const std::string name, const int gradeToSign, const int gradeToExec);
         ~Form();
 		Form &operator = (Form & copy);
         void	setName(std::string name);
-		std::string	getName();
+		std::string	getName() const;
 		int getSignGrade();
 		int getExecGrade();
 		std::string seeIfSigned();
 		void beSigned(Bureaucrat &b);
+		void	execute(Bureaucrat const & executor) const;
+		virtual void execute() const = 0;
         class GradeTooHighException : public std::exception{
 				public:
 					virtual const char* what() const throw();
 	
 			};
 			class GradeTooLowException : public std::exception{
+				public:
+					virtual const char* what() const throw();
+			};
+			class notSignedException : public std::exception{
 				public:
 					virtual const char* what() const throw();
 			};

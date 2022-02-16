@@ -18,7 +18,7 @@ class Bureaucrat
 			void	setName(const std::string name);
 			void	setGrade(int grade);
 			std::string const getName();
-			int				getGrade();
+			int	getGrade() const;
 			void increment(int num);
 			void decrement(int num);
 			class GradeTooHighException : public std::exception{

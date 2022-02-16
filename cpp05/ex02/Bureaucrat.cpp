@@ -25,7 +25,7 @@ std::string const Bureaucrat::getName()
     return (this->name);
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return (this->grade);
 }
@@ -92,4 +92,18 @@ void	Bureaucrat::signForm(Form &form)
 std::ostream& operator<<(std::ostream & os, Bureaucrat & i)
 {
 	return(os << i.getName() + ", grade: " << i.getGrade());
+}
+
+void Bureaucrat::execForm(const Form &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " exec the form " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << getName() << " cannot execute form, because " << e.what() << '\n';
+	}
+	
 }

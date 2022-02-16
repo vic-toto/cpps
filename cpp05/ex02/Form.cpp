@@ -1,10 +1,8 @@
 #include "Form.hpp"
 
-//Form::Form()
-//{
-//    this->gradeToExec = 0;
-//    this->gradeToSign = 0;
-//}
+Form::Form()
+{
+}
 
 Form::~Form()
 {
@@ -26,7 +24,7 @@ void    Form::setName(std::string const name)
     this->name = name;
 }
 
-std::string Form::getName()
+std::string Form::getName() const
 {
     return (this->name);
 }
@@ -75,7 +73,20 @@ const char* Form::GradeTooLowException::what() const throw() {
 	return "GRADE IS TOO LOW";
 }
 
+const char* Form::notSignedException::what() const throw() {
+	return "Not Signed";
+}
+
 std::ostream& operator<<(std::ostream & os, Form & i)
 {
 	return(os << i.getName() << ", grade to execute: " << i.getExecGrade() << ", gradeToSign: " << i.getSignGrade() << " Signed: " << i.seeIfSigned());
+}
+
+void Form::execute(Bureaucrat const & executor) const
+{
+	if (executor.getGrade() > this->gradeToExec)
+		throw GradeTooLowException();
+	if (this->is_signed == false)
+		throw notSignedException();
+	execute();
 }
