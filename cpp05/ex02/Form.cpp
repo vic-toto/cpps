@@ -1,8 +1,10 @@
 #include "Form.hpp"
 
-Form::Form()
-{
-}
+//Form::Form()
+//{
+//    this->gradeToExec = 0;
+//    this->gradeToSign = 0;
+//}
 
 Form::~Form()
 {
@@ -19,11 +21,6 @@ Form & Form::operator = (Form & copy)
     return (*this);
 }
 
-void    Form::setName(std::string const name)
-{
-    this->name = name;
-}
-
 std::string Form::getName() const
 {
     return (this->name);
@@ -36,8 +33,6 @@ Form::Form(const std::string name, const int gradeToSign, const int gradeToExec)
     else if (gradeToSign < 1 || gradeToExec < 1)
         throw GradeTooLowException();
     this->is_signed = false;
-    //this->gradeToExec = gradeToExec;
-    //this->gradeToSign = gradeToSign;
 }
 
 int     Form::getSignGrade()

@@ -11,18 +11,17 @@ class Bureaucrat;
 class Form
 {
     private:
-        std::string name;
+        const std::string name;
         bool is_signed;
-        int  gradeToSign;
-        int  gradeToExec;
+        const int  gradeToSign;
+        const int  gradeToExec;
 
     public:
-        Form();
+       // Form();
 		Form(Form & copy);
         Form(const std::string name, const int gradeToSign, const int gradeToExec);
-        ~Form();
+        virtual ~Form();
 		Form &operator = (Form & copy);
-        void	setName(std::string name);
 		std::string	getName() const;
 		int getSignGrade();
 		int getExecGrade();

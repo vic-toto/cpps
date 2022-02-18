@@ -21,11 +21,6 @@ Form & Form::operator = (Form & copy)
     return (*this);
 }
 
-void    Form::setName(std::string const name)
-{
-    this->name = name;
-}
-
 std::string Form::getName()
 {
     return (this->name);

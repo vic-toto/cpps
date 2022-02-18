@@ -11,10 +11,10 @@ class Bureaucrat;
 class Form
 {
     private:
-        std::string name;
+        const std::string name;
         bool is_signed;
-        int  gradeToSign;
-        int  gradeToExec;
+        const int  gradeToSign;
+        const int  gradeToExec;
 
     public:
         //Form();
@@ -22,7 +22,7 @@ class Form
         Form(const std::string name, const int gradeToSign, const int gradeToExec);
         ~Form();
 		Form &operator = (Form & copy);
-        void	setName(std::string name);
+        //void	setName(std::string name);
 		std::string	getName();
 		int getSignGrade();
 		int getExecGrade();

@@ -11,21 +11,20 @@ class Bureaucrat;
 class Form
 {
     private:
-        std::string name;
+        const std::string name;
         bool is_signed;
-        int  gradeToSign;
-        int  gradeToExec;
+        const int  gradeToSign;
+        const int  gradeToExec;
 
     public:
-        Form();
+        //Form();
 		Form(Form & copy);
         Form(const std::string name, const int gradeToSign, const int gradeToExec);
         virtual ~Form();
 		Form &operator = (Form & copy);
-        void	setName(std::string name);
 		std::string	getName() const;
-		int getSignGrade();
-		int getExecGrade();
+		int getSignGrade() const;
+		int getExecGrade() const;
 		std::string seeIfSigned();
 		void beSigned(Bureaucrat &b);
 		void	execute(Bureaucrat const & executor) const;

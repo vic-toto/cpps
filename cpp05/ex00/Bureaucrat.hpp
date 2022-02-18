@@ -14,8 +14,6 @@ class Bureaucrat
 			Bureaucrat(const std::string name, int const grade);
             Bureaucrat();
             ~Bureaucrat();
-			const Bureaucrat & operator = (const Bureaucrat & copy) const;
-			void	setName(const std::string name);
 			void	setGrade(int grade);
 			std::string const getName() const;
 			int	getGrade() const;

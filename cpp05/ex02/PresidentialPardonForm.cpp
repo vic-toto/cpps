@@ -9,7 +9,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &copy)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &copy) : Form(copy)
 {
     *this = copy;
 }

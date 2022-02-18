@@ -10,13 +10,12 @@ Bureaucrat::~Bureaucrat()
     std::cout << "Default destructor" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int const grade)
+Bureaucrat::Bureaucrat(const std::string name, int const grade) : name(name)
 {
 	if (grade > 150)
 		throw  GradeTooHighException();
 	else if (grade < 1)
 		throw GradeTooLowException();
-    this->setName(name);
     this->grade = grade;
     std::cout << "Copy constructor called for Bureaucrat " << name << " with grade " << grade << std::endl;
 }
@@ -41,22 +40,11 @@ void	Bureaucrat::increment(int num)
 	}
 }
 
-void	Bureaucrat::setName(const std::string name) const
-{
-	this->name = name;
-}
-
 void	Bureaucrat::setGrade(int grade)
 {
 	this->grade = grade;
 }
 
-const Bureaucrat& Bureaucrat::operator = (const Bureaucrat & copy) const
-{
-	this->name = copy.name;
-	this->grade = copy.grade; 
-	return (*this);
-}
 
 void	Bureaucrat::decrement(int num)
 {
