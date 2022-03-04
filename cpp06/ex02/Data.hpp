@@ -3,8 +3,11 @@
 
 #include <iostream>
 
-struct Data
+class Data
 {
+    public:
+        Data();
+        ~Data();
         int i;
         bool b;
         std::string str;
