@@ -1,7 +1,7 @@
-NAME	=	data
+NAME	=	base
 CPPC	=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
-SRCS	=	Data.cpp \
+SRCS	=	Base.cpp \
 			main.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 
