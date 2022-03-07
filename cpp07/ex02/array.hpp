@@ -13,21 +13,22 @@ class Array{
     public:
             Array<T>();
             Array<T>(unsigned int n);
-		Array<T>(const Array &copy);
-		Array& operator= (const Array &uguale);
-		T& operator[] (unsigned int i);
-		unsigned int sizeA() const;
-		~Array<T>();
-		class excepLimits : public std::exception
-		{
-			public:
-				virtual const char* what() const throw();
-		};
+			Array<T>(const Array &copy);
+			Array& operator= (const Array &uguale);
+			T& operator[] (unsigned int i);
+			unsigned int sizeA() const;
+			~Array<T>();
+			class excepLimits : public std::exception
+			{
+				public:
+					virtual const char* what() const throw();
+			};
 };
 
 template<typename T>
 Array<T>::Array()
 {
+	std::cout << "\nDefault constructor for array" << std::endl;
 	array = NULL;
 	size = 0;
 }
@@ -35,6 +36,7 @@ Array<T>::Array()
 template<typename T>
 Array<T>::Array(unsigned int n)
 {
+	std::cout << "\nConstructor with size for array" << std::endl;
 	array = new T[n];
 	size = n;
 }
@@ -42,6 +44,7 @@ Array<T>::Array(unsigned int n)
 template<typename T>
 Array<T>::Array(const Array<T> &copy)
 {
+	std::cout << "\nCopy constructor for array" << std::endl;
 	array = NULL;
 	*this = copy;
 }
