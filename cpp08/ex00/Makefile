@@ -9,9 +9,6 @@ OBJS	=	$(SRCS:.cpp=.o)
 
 all		:	$(NAME)
 
-$(OBJS)	:	$(SRCS)
-	-@$(CPPC) $(FLAGS) $(SRCS) -o $(NAME)
-
 $(NAME) : $(OBJS)
 	@echo Compiling: $(NAME)
 	@$(CPPC) $(FLAGS) $(SRCS) -o $(NAME)
